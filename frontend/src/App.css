@@ -22,3 +22,16 @@ body{
   margin-right: 20px;
  
 }
+ 
+.funnel {
+}
+
+.funnel1 {
+  display: flex;
+}
+.funnel2{
+  display: flex;
+  gap: 10px;
+}
+
+
