@@ -6,5 +6,4 @@ router.get('/get-data', UserController.getData);
 router.get('/get-data-center-visualization', UserController.centerVisualization);
 
 
-
 module.exports = router;

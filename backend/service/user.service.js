@@ -19,7 +19,7 @@ exports.getData = async (year = '2022') => {
     }
 
     const query = response.data.query;
-    const filters = { "all_data_iter_4.date_year": year };
+    const filters = { /*"all_data_iter_4.date_year": year*/ };
 
     const body = AxiosWrapper.createBody("mahindra_afs", query.view, query.fields, filters);
     console.log("Query Body:", body);
@@ -47,7 +47,7 @@ exports.centerVisualization = async (year = '2022') => {
       throw new Error('Token not generated...!');
     }
 
-    const response = await axios.get(`${config.lookerURL}/looks/137`, {
+    const response = await axios.get(`${config.lookerURL}/looks/147`, {
       headers: { Authorization: `Bearer ${token}` }
     });
 
@@ -76,3 +76,4 @@ exports.centerVisualization = async (year = '2022') => {
     throw error;
   }
 };
+
