@@ -105,8 +105,10 @@
 
 
 .copyright {
+  display: flex;
+  align-items: center;
   margin-top: 830px;
-  margin-right: 250px;
+  margin-right: 850px;
 }
 
 .copyright p {
@@ -144,9 +146,27 @@
 }
 
 /* Card container */
-.card {
+.card1 {
   position: relative;
-  margin: 0 0 20px 20px;
+  margin: -150px 50px 20px -20px;
+  padding: 10px;
+
+  color: gray;
+  border-radius: 8px;
+  max-width: 400px;
+}
+.card2 {
+  position: relative;
+  margin: 0px 0px 20px -385px;
+  padding: 10px;
+
+  color: gray;
+  border-radius: 8px;
+  max-width: 400px;
+}
+.card3 {
+  position: relative;
+  margin: 60px 0px -30px 75px;
   padding: 10px;
 
   color: gray;

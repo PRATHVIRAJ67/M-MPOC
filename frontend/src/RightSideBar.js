@@ -1,8 +1,10 @@
 import "./RightSideBar.css";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import { getData } from "./api/Look.js";
+
 import {
   LineChart,
   Line,
@@ -13,57 +15,137 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-const data = [
-  {
-    name: "2020",
-    Mahindra: 3000,
-    Maruthi: 3000,
-    Tata: 3000,
-  },
-  {
-    name: "2021",
-    Mahindra: 3600,
-    Maruthi: 3200,
-    Tata: 3900,
-  },
-  {
-    name: "2022",
-    Mahindra: 4400,
-    Maruthi: 3800,
-    Tata: 4200,
-  },
-  {
-    name: "2023",
-    Mahindra: 4500,
-    Maruthi: 3700,
-    Tata: 4200,
-  },
-  {
-    name: "2024",
-    Mahindra: 4000,
-    Maruthi: 4800,
-    Tata: 4300,
-  },
-  {
-    name: "2025",
-    Mahindra: 4300,
-    Maruthi: 4600,
-    Tata: 3900,
-  },
-  {
-    name: "2026",
-    Mahindra: 4000,
-    Maruthi: 4000,
-    Tata: 4000,
-  },
-];
+
+let mm_2020,mm_2021,mm_2022,mar_2020,mar_2021,mar_2022,tata_2020,tata_2021,tata_2022
 const RightSideBar = () => {
+
+  const [linegraphdata, setData] = useState([]);
   const [opacity, setOpacity] = useState({
     Mahindra: 1,
     Maruthi: 1,
     Tata: 1,
   });
-
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await getData();
+        setData(result.success);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  /*const data = [
+    {
+      name: "2020",
+      Mahindra: 3000,
+      Maruthi: 3000,
+      Tata: 3000,
+    },
+    {
+      name: "2021",
+      Mahindra: 3600,
+      Maruthi: 3200,
+      Tata: 3900,
+    },
+    {
+      name: "2022",
+      Mahindra: 4400,
+      Maruthi: 3800,
+      Tata: 4200,
+    },
+    {
+      name: "2023",
+      Mahindra: 4500,
+      Maruthi: 3700,
+      Tata: 4200,
+    },
+    {
+      name: "2024",
+      Mahindra: 4000,
+      Maruthi: 4800,
+      Tata: 4300,
+    },
+    {
+      name: "2025",
+      Mahindra: 4300,
+      Maruthi: 4600,
+      Tata: 3900,
+    },
+    {
+      name: "2026",
+      Mahindra: 4000,
+      Maruthi: 4000,
+      Tata: 4000,
+    },
+  ];*/
+  linegraphdata.filter((item) =>
+  item["all_data_iter_4.date_year"] === 2020).map((item,index)=>{
+    switch(item["all_data_iter_4.company"]){
+      case "Mahindra":
+        mm_2020=item["all_data_iter_4.total_revenue"]
+        break
+        case "Maruthi":
+          mar_2020=item["all_data_iter_4.total_revenue"]
+          break
+          case "Tata":
+            tata_2020=item["all_data_iter_4.total_revenue"]
+            break
+    }
+  }
+)
+linegraphdata.filter((item) =>
+  item["all_data_iter_4.date_year"] === 2021).map((item,index)=>{
+    switch(item["all_data_iter_4.company"]){
+      case "Mahindra":
+        mm_2021=item["all_data_iter_4.total_revenue"]
+        break
+        case "Maruthi":
+          mar_2021=item["all_data_iter_4.total_revenue"]
+          break
+          case "Tata":
+            tata_2021=item["all_data_iter_4.total_revenue"]
+            break
+    }
+  }
+)
+linegraphdata.filter((item) =>
+  item["all_data_iter_4.date_year"] === 2022).map((item,index)=>{
+    switch(item["all_data_iter_4.company"]){
+      case "Mahindra":
+        mm_2022=item["all_data_iter_4.total_revenue"]
+        break
+        case "Maruthi":
+          mar_2022=item["all_data_iter_4.total_revenue"]
+          break
+          case "Tata":
+            tata_2022=item["all_data_iter_4.total_revenue"]
+            break
+    }
+  }
+)
+const data = [
+  {
+    name: "2020",
+    Mahindra: mm_2020,
+    Maruthi: mar_2020,
+    Tata: tata_2020,
+  },
+  {
+    name: "2021",
+    Mahindra: mm_2021,
+    Maruthi: mar_2021,
+    Tata: tata_2021,
+  },
+  {
+    name: "2022",
+    Mahindra: mm_2022,
+    Maruthi: mar_2022,
+    Tata: tata_2022,
+  }
+];
   return (
     <>
       <div className="rightsidebar">
@@ -210,7 +292,6 @@ const RightSideBar = () => {
           <span className="year">2020 </span>
           <span className="year">2021 </span>
           <span className="year">2022 </span>
-          <span className="year">2023 </span>
         </p>
       </div>
     </>

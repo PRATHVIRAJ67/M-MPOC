@@ -15,3 +15,15 @@ export const getData = async () => {
     console.log("Error fetching data:", err.message);
   }
 };
+
+
+export const centerVisualization = async () => {
+  try {
+    console.log("called center Visualization");
+    let response = await axios.get(`${url}/get-data-center-visualization`);
+
+    return response.data;
+  } catch (err) {
+    console.log("Error fetching data:", err.message);
+  }
+};
