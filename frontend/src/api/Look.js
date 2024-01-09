@@ -27,3 +27,46 @@ export const centerVisualization = async () => {
     console.log("Error fetching data:", err.message);
   }
 };
+export const salesTrendZoneWise = async () => {
+  try {
+    console.log("called sales trend zone wise");
+    let response = await axios.get(`${url}/get-data-sales-trend-zone-wise`);
+
+    return response.data;
+  } catch (err) {
+    console.log("Error fetching data:", err.message);
+  }
+};
+
+export const funnelData = async () => {
+  try {
+    console.log("called Funnel Data");
+    let response = await axios.get(`${url}/get-data-funnel`);
+
+    return response.data;
+  } catch (err) {
+    console.log("Error fetching data:", err.message);
+  }
+};
+
+export const funnelEntityData = async () => {
+  try {
+    console.log("called Funnel Entity Data");
+    let response = await axios.get(`${url}/get-data-funnel-entity`);
+
+    return response.data;
+  } catch (err) {
+    console.log("Error fetching data:", err.message);
+  }
+};
+
+export const entityPercentDifference = async () => {
+  try {
+    console.log("called Entity Percent Data");
+    let response = await axios.get(`${url}/get-data-entity-percent-difference`);
+
+    return response.data;
+  } catch (err) {
+    console.log("Error fetching data:", err.message);
+  }
+};
