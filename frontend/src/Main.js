@@ -322,15 +322,19 @@ const Main = ({ selectedYear,selectedCompany }) => {
   
    <>
      <div className="main">
-       <div className="circle">
+     <div className={`${selectedCompany}-circle circle`}>
          <div className="circle-2">
            <div class="timeline2">
              <div class="outers">
                <div class="cards">
-                 <div class="info1">
+               <div class="info1" style={{display:'flex', flexDirection:'column'}}>
+                   <div >
+                   <p className={`${selectedCompany} title`} style={{ whiteSpace: "nowrap",}}>
+                   </p>
                    <p class="title" style={{ whiteSpace: "nowrap" }}>
                      Total sale
                    </p>
+                   </div>
                    {
                     
                      data.filter(
@@ -355,7 +359,11 @@ const Main = ({ selectedYear,selectedCompany }) => {
                  </div>
                </div>
                <div class="cards">
-                 <div class="info1">
+               <div class="info1" style={{display:'flex', flexDirection:'column'}}>
+                   <div >
+                   <p className={`${selectedCompany} title`} style={{ whiteSpace: "nowrap",}}>
+                   </p>
+                   </div>
                    <p class="title" style={{ whiteSpace: "nowrap" }}>Eastern zone</p>
                     
                   
@@ -363,28 +371,40 @@ const Main = ({ selectedYear,selectedCompany }) => {
                  </div>
                </div>
                <div class="cards">
-                 <div class="info1">
+               <div class="info1" style={{display:'flex', flexDirection:'column'}}>
+                   <div >
+                   <p className={`${selectedCompany} title`} style={{ whiteSpace: "nowrap",}}>
+                   </p>
                    <p class="title" style={{ whiteSpace: "nowrap" }}>
                      Western Zone
                    </p>
-      
+                   </div>
+       
                    <h3 style={{ whiteSpace: "nowrap" }}>{west} Cr</h3>
                  </div>
                </div>
                <div class="cards">
-                 <div class="info1">
+               <div class="info1" style={{display:'flex', flexDirection:'column'}}>
+                   <div >
+                   <p className={`${selectedCompany} title`} style={{ whiteSpace: "nowrap",}}>
+                   </p>
                    <p class="title" style={{ whiteSpace: "nowrap" }}>
                      Northern Zone
                    </p>
+                   </div>
   
                    <h3 style={{ whiteSpace: "nowrap" }}>{north} Cr</h3>
                  </div>
                </div>
                <div class="cards">
-                 <div class="info1">
+               <div class="info1" style={{display:'flex', flexDirection:'column'}}>
+                   <div >
+                   <p className={`${selectedCompany} title`} style={{ whiteSpace: "nowrap",}}>
+                   </p>
                    <p class="title" style={{ whiteSpace: "nowrap" }}>
                      Southern Zone
                    </p>
+                   </div>
             
                   
                    <h3 style={{ whiteSpace: "nowrap" }}>{south
