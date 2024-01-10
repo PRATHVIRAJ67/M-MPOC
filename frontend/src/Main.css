@@ -61,6 +61,19 @@
 
 }
 
+
+.Mahindra-circle {
+  border-right: 4px solid #F80000;
+}
+
+.Tata-circle {
+  border-right: 4px solid #00f9ec;
+}
+
+.Maruthi-circle {
+  border-right: 4px solid #CF9CEB;
+}
+
 .circle-2 {
 
   border-radius: 50%;
@@ -105,8 +118,10 @@
 
 
 .copyright {
+  display: flex;
+  align-items: center;
   margin-top: 830px;
-  margin-right: 250px;
+  margin-right: 850px;
 }
 
 .copyright p {
@@ -144,9 +159,27 @@
 }
 
 /* Card container */
-.card {
+.card1 {
   position: relative;
-  margin: 0 0 20px 20px;
+  margin: -150px 50px 20px -20px;
+  padding: 10px;
+
+  color: gray;
+  border-radius: 8px;
+  max-width: 400px;
+}
+.card2 {
+  position: relative;
+  margin: 0px 0px 20px -385px;
+  padding: 10px;
+
+  color: gray;
+  border-radius: 8px;
+  max-width: 400px;
+}
+.card3 {
+  position: relative;
+  margin: 60px 0px -30px 75px;
   padding: 10px;
 
   color: gray;
@@ -241,12 +274,48 @@
 
 
 .title::before {
-  content: "";
+  /* content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   background: #F90000;
   border-radius: 999px;
   left: -39px;
+  border: 0.6px solid #F90000; */
+}
+
+.Maruthi {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  right: 20px;
+  background: #CF9CEB;
+  margin-top: 4px;
+  border: 0.6px solid #CF9CEB;
+}
+
+.Mahindra {
+  content: "";
+  position: absolute;
+  width: 10px;
+  margin-top: 4px;
+  height: 10px;
+  border-radius: 999px;
+  right: 20px;
+  background: #F90000;
   border: 0.6px solid #F90000;
+}
+
+.Tata {
+  content: "";
+  position: absolute;
+  width: 10px;
+  margin-top: 4px;
+  height: 10px;
+  border-radius: 999px;
+  right: 20px;
+  background: #00f9ec;
+  border: 0.6px solid #00f9ec;
 }

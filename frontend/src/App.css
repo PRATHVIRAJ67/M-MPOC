@@ -22,3 +22,22 @@ body{
   margin-right: 20px;
  
 }
+
+.funnel-container {
+  margin-top: 30px;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 62rem;
+  margin-left: -15px;
+}
+.dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.copyRightParagraph {
+  white-space: nowrap;
+  padding-top: 50%;
+  color: #8e918f;
+}

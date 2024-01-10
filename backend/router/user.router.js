@@ -4,7 +4,10 @@ const UserController = require('../controller/user.controller');
 
 router.get('/get-data', UserController.getData);
 router.get('/get-data-center-visualization', UserController.centerVisualization);
-
+router.get('/get-data-sales-trend-zone-wise',UserController.salesTrendZoneWise);
+router.get('/get-data-funnel',UserController.funnelData);
+router.get('/get-data-funnel-entity',UserController.funnelEntityData)
+router.get('/get-data-entity-percent-difference',UserController.entityPercentDifference);
 
 
 module.exports = router;
