@@ -33,6 +33,11 @@ const Header = () => {
     console.log("Competitors")
     navigate('/');
   }
+
+  const handleChatbot = () => {
+    console.log("Chatbot")
+    navigate('./chatbot');
+  }
   return (
     <>
       <div className="header">
@@ -50,6 +55,9 @@ const Header = () => {
             </a>
             <a onClick={handleCompetitors}>
               Competitor analysis
+            </a>
+            <a onClick={handleChatbot}>
+              BigQuery Chatbot
             </a>
           </nav>
         </div>

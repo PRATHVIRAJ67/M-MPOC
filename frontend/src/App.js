@@ -46,6 +46,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Page2 from './Page2';
 import Sales from './components/Sales';
 import Funnel from './components/Funnel';
+import ChatBot from "./components/chatbot";
 
 
 const App = () => {
@@ -77,6 +78,7 @@ const App = () => {
          <Route path="/page2" element={<Page2 />} />
          <Route path="/Sales" element={<Sales />} />
          <Route path="/Funnel" element={<Funnel />} />
+         <Route path="/chatbot" element={<ChatBot />} />
        </Routes>
      </Router>
    </div>
