@@ -1,4 +1,3 @@
-# Base image for building the React frontend
 FROM node:16-alpine AS react-builder
 
 WORKDIR /frontend
@@ -23,9 +22,15 @@ FROM nginx:1.23-alpine AS production
 COPY --from=react-builder /frontend/build /usr/share/nginx/html
 COPY --from=node-builder /backend /app
 
+# Install Supervisor
+RUN apk add --no-cache supervisor
+
+# Copy Supervisor configuration file
+COPY /supervisord.conf supervisord.conf
+
 EXPOSE 80 3000 3003
 
-CMD ["nginx", "-g", "daemon off;", "node /app/index.js;"]
+CMD ["supervisord", "-c", "supervisord.conf"]
 
 # sudo docker build -t my-app .
 # sudo docker run -p 80:3000 my-app
