@@ -41,3 +41,6 @@ body{
   padding-top: 50%;
   color: #8e918f;
 }
+body {
+  font-family:  sans-serif; /* Replace with your desired font */
+}
